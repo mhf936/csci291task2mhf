@@ -1,0 +1,233 @@
+#include<stdio.h>
+#define num_of_students 5
+#define Size 5
+int averageNumbers(float arr[], int length){ 
+    float sum =0;
+    float average;
+    for(int i=0;i<length;i++){
+        sum=sum+arr[i];
+    }
+    average = sum/length;
+    return average;
+        } 
+
+typedef struct 
+{
+char Firstname;
+char lastname;
+int StudentID;
+float SubjectMarks[Size];
+int aggregateMarks;
+char Grade;
+} S_t;  
+
+
+int main(){
+int i;
+int a;
+int c;
+float d;
+int g;
+int L;
+int F;
+int y;
+S_t Student[num_of_students];
+while(1){
+printf("what would you like to choose:\n1.enroll\n2.search update\n3.top students\n0.Exit\n ");
+scanf("%d",&g);
+if(g==1){
+printf("which student would you like to edit their details:\n1.Student1 \n2.Student2\n3.Student3\n");
+scanf("%d",&a);
+switch(a){
+    case 1:{
+    printf("what is the ID of this student: ");
+    scanf("%d",&Student[0].StudentID);
+    printf("what is the students first name");
+    scanf("%s",&Student[0].Firstname);
+    printf("what is the students last name");
+    scanf("%s",&Student[0].lastname);
+    printf("would you like to input Student1's marks (awnser with 1 or 0 for yes or no) ");
+    scanf("%d",&c);
+    if(c==1){
+        for(i=0;i<Size;i++){
+        printf("please input the Student1's grades: ");
+        scanf("%f",&Student[0].SubjectMarks[i]);
+       
+        }
+        for(i=0;i<Size;i++){
+    if(Student[0].SubjectMarks[i]>=85){
+            printf("HD\n");
+        }
+        else if(Student[0].SubjectMarks[i]>=75){
+            printf("D\n");
+        }
+        else if(Student[0].SubjectMarks[i]>=65){
+            printf("C\n");
+        }
+        else if(Student[0].SubjectMarks[i]>=50){
+            printf("P\n");
+        }
+        else if(Student[0].SubjectMarks[i]<50){
+            printf("F\n");
+    
+    }
+        }
+        Student[0].aggregateMarks=averageNumbers(Student[0].SubjectMarks,5);
+        printf("the average is %d",Student[0].aggregateMarks);
+    
+    break;
+    }
+    }
+    case 2:{
+        printf("what is the ID of this student: ");
+    scanf("%d",&Student[1].StudentID);
+    printf("what is the students first name");
+    scanf("%s",&Student[1].Firstname);
+    printf("would you like to input Student1's marks (awnser with 1 or 0 for yes or no) ");
+    scanf("%d",&c);
+    printf("what is the students last name");
+    scanf("%s",&Student[1].lastname);
+    if(c==1){
+        for(i=0;i<Size;i++){
+        printf("please input the Student1's grades: ");
+        scanf("%f",&Student[1].SubjectMarks[i]);
+       
+        }
+        for(i=0;i<Size;i++){
+    if(Student[1].SubjectMarks[i]>=85){
+            printf("HD\n");
+        }
+        else if(Student[1].SubjectMarks[i]>=75){
+            printf("D\n");
+        }
+        else if(Student[1].SubjectMarks[i]>=65){
+            printf("C\n");
+        }
+        else if(Student[1].SubjectMarks[i]>=50){
+            printf("P\n");
+        }
+        else if(Student[1].SubjectMarks[i]<50){
+            printf("F\n");
+    
+    
+
+        }
+        
+        }
+        Student[1].aggregateMarks=averageNumbers(Student[1].SubjectMarks,5);
+        if(Student[1].SubjectMarks[i]>=85){
+            printf("the average grade is HD\n");
+        }
+        else if(Student[1].SubjectMarks[i]>=75){
+            printf("the average grade is D\n");
+        }
+        else if(Student[1].SubjectMarks[i]>=65){
+            printf("the average grade is C\n");
+        }
+        else if(Student[1].SubjectMarks[i]>=50){
+            printf("the average grade is P\n");
+        }
+        else if(Student[1].SubjectMarks[i]<50){
+            printf("the average grade is F\n");
+        }
+            break;
+    }
+    }
+        case 3:
+        {
+        printf("what is the ID of this student: ");
+    scanf("%d",&Student[2].StudentID);
+    printf("what is the students first name");
+    scanf("%s",&Student[2].Firstname);
+        printf("what is the students last name");
+    scanf("%s",&Student[2].lastname);
+    printf("would you like to input Student1's marks (awnser with 1 or 0 for yes or no) ");
+    scanf("%d",&c);
+    if(c==1){
+        for(i=0;i<Size;i++){
+        printf("please input the Student1's grades: ");
+        scanf("%f",&Student[2].SubjectMarks[i]);
+       
+        }
+        for(i=0;i<Size;i++){
+    if(Student[2].SubjectMarks[i]>=85){
+            printf("HD\n");
+        }
+        else if(Student[2].SubjectMarks[i]>=75){
+            printf("D\n");
+        }
+        else if(Student[2].SubjectMarks[i]>=65){
+            printf("C\n");
+        }
+        else if(Student[2].SubjectMarks[i]>=50){
+            printf("P\n");
+        }
+        else if(Student[2].SubjectMarks[i]<50){
+            printf("F\n");
+        
+        Student[2].aggregateMarks=averageNumbers(Student[2].SubjectMarks,5);
+        if(Student[2].SubjectMarks[i]>=85){
+            printf("the average grade is HD\n");
+        }
+        else if(Student[2].SubjectMarks[i]>=75){
+            printf("the average grade is D\n");
+        }
+        else if(Student[2].SubjectMarks[i]>=65){
+            printf("the average grade is C\n");
+        }
+        else if(Student[2].SubjectMarks[i]>=50){
+            printf("the average grade is P\n");
+        }
+        else if(Student[2].SubjectMarks[i]<50){
+            printf("the average grade is F\n");
+        }
+            
+        
+            
+        }
+        }
+    
+        break;
+    }
+        
+        }
+
+        default:{Student[0].aggregateMarks=-1;
+        Student[1].aggregateMarks=-1;
+        Student[2].aggregateMarks=-1;
+        printf("undefined\n");
+        break;
+        
+}
+
+
+}
+}
+
+else if(g==2){
+    printf("what method would you like to search for the student(StudentID or Last name press 1 or 0 respectively): ");
+scanf("%d",&L);
+switch(L){
+    case 1:{
+printf("input the student's ID: ");
+scanf("%d",&F);
+if(F==Student[0].StudentID){
+printf("%s",Student[0].lastname);
+printf("%s",Student[0].Firstname);
+printf("%d",Student[0].StudentID);
+printf("%d",Student[0].aggregateMarks);       
+ }
+       break;
+}
+
+}
+}
+else if(g==3){
+}
+else if(g==0){
+    return 0;
+}
+}
+}
+
+
